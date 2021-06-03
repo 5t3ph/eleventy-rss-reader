@@ -1,3 +1,5 @@
+![Let's Build a Jamstack App Together! RSS Reader using Eleventy and modern CSS](https://repository-images.githubusercontent.com/373531262/98d88600-c465-11eb-887f-ae7ae70014b8)
+
 # Build in Progress: Eleventy RSS Reader
 
 We're building this project LIVE over on Twitch. Visit the [announcement post](https://dev.to/5t3ph/let-s-build-a-jamstack-app-together-5hkp) to learn more.
