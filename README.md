@@ -1,12 +1,19 @@
-![logo](https://repository-images.githubusercontent.com/302921248/58478900-0adf-11eb-8f0b-74be58a898ef)
+# Build in Progress: Eleventy RSS Reader
 
-# 11ty Sass Skeleton
+We're building this project LIVE over on Twitch. Visit the [announcement post](https://dev.to/5t3ph/let-s-build-a-jamstack-app-together-5hkp) to learn more.
 
-Featuring absolutely nothing beyond a base HTML5 template and the essential setup to watch and compile your Sass alongside 11ty.
+[Follow 5t3phDev on Twitch](https://twitch.tv/5t3phDev) for go-live notifications.
 
-Includes minifiying and autoprefixing of styles `postbuild`.
+[Subscribe to my newsletter](https://moderncss.dev) to receive my weekly streaming schedule (and other news about my various projects + CSS tips).
 
-<small>Created by [@5t3ph](https://twitter.com/5t3ph)</small>
+[Follow @5t3ph on Twitter](https://twitter.com/5t3ph)
+
+## Available Recordings
+
+> Final edited recordings will eventually be published to the [11ty Rocks YouTube Channel](https://www.youtube.com/channel/UCTuSQg_Ol4shhSYQ1EfpHiQ?sub_confirmation=1)
+
+- [Project intro and creating the feature list](https://www.twitch.tv/videos/1042505212)
+- [Begin the 11ty architecture + add feedparser](https://www.twitch.tv/videos/1044461360)
 
 ## Development Scripts
 
@@ -22,12 +29,10 @@ Use this as the "Publish command" if needed by hosting such as Netlify.
 
 ## Resources to extend this and learn 11ty
 
-**Ensure accessible colors** by adding my [a11y-color-tokens package](https://www.npmjs.com/package/a11y-color-tokens)
+**New to Eleventy?** Get started with my [written tutorial for beginners](https://11ty.rocks/posts/create-your-first-basic-11ty-website/)
 
 **Learn to build an 11ty site in 20 mins** with my [egghead video course](https://5t3ph.dev/learn-11ty) and see how to add a blog and custom data.
 
-**Add auto-generated social media images** with [my plugin](https://www.npmjs.com/package/@11tyrocks/eleventy-plugin-social-images)
-
 **Explore advanced setup of custom data** through my [tutorial on building a community site](https://css-tricks.com/a-community-driven-site-with-eleventy-building-the-site/)
 
-**For a more full-featured starter** check out my [11ty Netlify Jumpstart](https://11ty-netlify-jumpstart.netlify.app/) (also works for hosts other than Netlify).
+**Even more resources** are available from [11ty.Rocks](https://11ty.rocks)
