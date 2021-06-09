@@ -1,9 +1,23 @@
 ---
 layout: base.njk
-title: Hello World
+title: Feeds
 ---
 
-{# TODO: update this once the returned data is in better shape #}
-{% for item in feeds %}
-{{ item.title }}
+{% for category in feeds %}
+  <h2>{{ category.category }}</h2>
+  <ul>
+    {% for feed in category.items %}
+      <li>
+        <h3>{{ feed.feedTitle }}</h3>
+        <ul>
+        {% for item in feed.items %}
+          <li>
+            <strong>{{ item.date | postDate }}</strong>
+            <a href="">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
 {% endfor %}

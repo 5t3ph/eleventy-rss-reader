@@ -1,0 +1,26 @@
+---
+pagination:
+  data: feeds
+  size: 1
+  alias: categories
+permalink: "/category/{{ categories.category | slug }}/"
+layout: base.njk
+eleventyComputed:
+  title: "{{ categories.category }}"
+---
+
+<ul>
+  {% for feed in categories.items %}
+    <li>
+      <h3>{{ feed.feedTitle }}</h3>
+      <ul>
+      {% for item in feed.items %}
+        <li>
+          <strong>{{ item.date | postDate }}</strong>
+          <a href="">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>
