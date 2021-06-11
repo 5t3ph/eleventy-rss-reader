@@ -16,6 +16,8 @@ We're building this project LIVE over on Twitch. Visit the [announcement post](h
 
 - [Project intro and creating the feature list](https://www.twitch.tv/videos/1042505212)
 - [Begin the 11ty architecture + add feedparser](https://www.twitch.tv/videos/1044461360)
+- [Reorganize, adjust feed output, and create dynamic views](https://www.twitch.tv/videos/1050950198?collection=G7YXMEt6hhYCyw)
+- [Enable method to determine "new", link views](https://www.twitch.tv/videos/1052892091?collection=G7YXMEt6hhYCyw)
 
 ## Development Scripts
 

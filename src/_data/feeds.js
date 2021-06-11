@@ -3,6 +3,11 @@ const FeedParser = require('feedparser');
 const fetch = require('node-fetch');
 const fastglob = require("fast-glob");
 const fs = require("fs");
+const lastAccessed = require("./lastAccessed.js");
+
+const d = new Date();
+d.setDate(d.getDate() - 90);
+const dateLimit = new Date(d).getTime();
 
 const getSources = async () => {
   // Create a "glob" of all feed json files
@@ -56,35 +61,45 @@ const parseFeed = async (feed) => {
 
       while ((item = stream.read())) {
         let feedItem = {};
+        const itemTimestamp = new Date(item["date"]).getTime();
+
+        if (itemTimestamp < dateLimit) {
+          return;
+        }
+
         // Process feedItem item and push it to items data if it exists
         if (item['title'] && item['date']) {
           // Feed Source meta data
-          feedItem['feedTitle'] = item['meta'].title;
-          feedItem['feedAuthor'] = item['meta'].author || item['author'];
-          feedItem['siteUrl'] = item['meta'].link;
-          feedItem['feedUrl'] = item['meta'].xmlurl;
+          feedItem["feedTitle"] = item["meta"].title;
+          feedItem["feedAuthor"] = item["meta"].author || item["author"];
+          feedItem["siteUrl"] = item["meta"].link;
+          feedItem["feedUrl"] = item["meta"].xmlurl;
+
+          // Check freshness
+          if (itemTimestamp > lastAccessed) {
+            feedItem["new"] = "true";
+          }
 
           // Individual item data
-          feedItem['title'] = item['title'];
-          feedItem['date'] = item['date'];
+          feedItem["title"] = item["title"];
+          feedItem["date"] = item["date"];
 
-          if (item['summary']) {
-            feedItem['excerpt'] = createExcerpt(item['summary']);
-          } else if (item['description']) {
-            feedItem['excerpt'] =
-              createExcerpt(item['description']);
+          if (item["summary"]) {
+            feedItem["excerpt"] = createExcerpt(item["summary"]);
+          } else if (item["description"]) {
+            feedItem["excerpt"] = createExcerpt(item["description"]);
           }
 
-          if (item['description']) {
-            feedItem['content'] = item['description'];
+          if (item["description"]) {
+            feedItem["content"] = item["description"];
           }
 
-          if (item['link']) {
-            feedItem['link'] = item['link'];
+          if (item["link"]) {
+            feedItem["link"] = item["link"];
           }
 
-          if (item['image'] && item['image'].url) {
-            feedItem['imageUrl'] = item['image'].url;
+          if (item["image"] && item["image"].url) {
+            feedItem["imageUrl"] = item["image"].url;
           }
 
           feedItems.push(feedItem);
@@ -110,7 +125,9 @@ module.exports = async () => {
     
     for (const feed of categorySource.items) {
       const feedData = await parseFeed(feed);
-      items.push({ feedTitle: feedData[0].feedTitle, items: feedData });
+      if (feedData.length) {
+        items.push({ feedTitle: feedData[0].feedTitle, items: feedData });
+      }
     }
 
     feeds.push({ category, items });

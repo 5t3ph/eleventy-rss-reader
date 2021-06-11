@@ -19,7 +19,7 @@
     }
   },
   layout: "base.njk",
-  permalink: "/{{ item.title | slug }}/",
+  permalink: "/{{ item.feedTitle | slug }}/{{ item.title | slug }}/",
   eleventyComputed: {
     title: "{{ item.title }}"
   }

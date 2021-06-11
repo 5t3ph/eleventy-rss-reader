@@ -4,16 +4,19 @@ title: Feeds
 ---
 
 {% for category in feeds %}
-  <h2>{{ category.category }}</h2>
+  <h2><a href="/category/{{ category.category | slug }}/">{{ category.category }}</a></h2>
   <ul>
     {% for feed in category.items %}
       <li>
-        <h3>{{ feed.feedTitle }}</h3>
+        {% set newCount %}{{ feed.items | newCount | length }}{% endset %}
+        {% if newCount > 0 %}{{ newCount }}{% endif %}
+        <h3><a href="/{{ feed.feedTitle | slug }}/">{{ feed.feedTitle }}</a></h3>
         <ul>
         {% for item in feed.items %}
           <li>
+            {% if item.new %}New{% endif %}
             <strong>{{ item.date | postDate }}</strong>
-            <a href="">{{ item.title }}</a>
+            <a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a>
           </li>
         {% endfor %}
         </ul>

@@ -27,7 +27,7 @@
   {% for item in sources.items %}
     <li>
       <strong>{{ item.date | postDate }}</strong>
-      <a href="">{{ item.title }}</a>
+      <a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a>
     </li>
   {% endfor %}
 </ul>
