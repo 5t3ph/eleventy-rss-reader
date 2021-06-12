@@ -1,5 +1,4 @@
 const { DateTime } = require("luxon");
-const lastAccessed = require("./src/_data/lastAccessed.js") || Date.now();
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/sass/");
@@ -10,7 +9,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("newCount", (feedItems) => {
     return feedItems.filter(
-      (i) => new Date(`${i.date}`).getTime() > new Date(lastAccessed).getTime()
+      (i) => i.new
     );
   });
 
