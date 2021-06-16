@@ -1,0 +1,18 @@
+<li>
+  {% set feedSlug %}{{ feed.feedTitle | slug }}{% endset %}
+
+  {% newCount collections.items, feed.feedTitle, feedSlug %}
+
+  <h3 id="{{ feedSlug }}"><a href="/{{ feedSlug }}/">{{ feed.feedTitle }}</a></h3>
+  <ul>
+  {% for item in feed.items | limit(3) %}
+    <li>
+      {% include "postDate.njk" %}
+      <a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+  <footer>
+    <a href="/{{ feed.feedTitle | slug }}/">View all from {{ feed.siteUrl | domain }}</a>
+  </footer>
+</li>

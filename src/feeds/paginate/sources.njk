@@ -19,15 +19,21 @@
   layout: "base.njk",
   permalink: "/{{ sources.feedTitle | slug }}/",
   eleventyComputed: {
-    title: "{{ sources.feedTitle }}"
+    title: "{{ sources.feedTitle }}",
+    siteUrl: "{{ sources.siteUrl }}"
   }
 }
 ---
 <ul>
   {% for item in sources.items %}
     <li>
-      <strong>{{ item.date | postDate }}</strong>
-      <a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a>
+      {% include "postDate.njk" %}
+      <h2><a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a></h2>
+      <p>{{ item.excerpt }}</p>
+      <footer>
+        <a href="{{ item.link }}">View <span class="inclusively-hidden">{{ item.title }}</span> on {{ item.siteUrl | domain }}</a>
+      </footer>
+
     </li>
   {% endfor %}
 </ul>

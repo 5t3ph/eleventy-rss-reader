@@ -126,7 +126,11 @@ module.exports = async () => {
     for (const feed of categorySource.items) {
       const feedData = await parseFeed(feed);
       if (feedData.length) {
-        items.push({ feedTitle: feedData[0].feedTitle, items: feedData });
+        items.push({
+          feedTitle: feedData[0].feedTitle,
+          siteUrl: feedData[0].siteUrl,
+          items: feedData,
+        });
       }
     }
 

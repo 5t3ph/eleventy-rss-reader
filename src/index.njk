@@ -3,24 +3,17 @@ layout: base.njk
 title: Feeds
 ---
 
+{# <ul>
+{% for item in collections.items %}
+<li>{{ item.data.new }} - {{ item.data.title }}</li>
+{% endfor %}
+</ul> #}
+
 {% for category in feeds %}
   <h2><a href="/category/{{ category.category | slug }}/">{{ category.category }}</a></h2>
   <ul>
     {% for feed in category.items %}
-      <li>
-        {% set newCount %}{{ feed.items | newCount | length }}{% endset %}
-        {% if newCount > 0 %}{{ newCount }}{% endif %}
-        <h3><a href="/{{ feed.feedTitle | slug }}/">{{ feed.feedTitle }}</a></h3>
-        <ul>
-        {% for item in feed.items %}
-          <li>
-            {% if item.new %}New{% endif %}
-            <strong>{{ item.date | postDate }}</strong>
-            <a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a>
-          </li>
-        {% endfor %}
-        </ul>
-      </li>
+      {% include "sourceCard.njk" %}
     {% endfor %}
   </ul>
 {% endfor %}

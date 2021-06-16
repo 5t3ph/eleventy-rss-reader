@@ -8,7 +8,12 @@
 </head>
 <body>
 	<header>
-		<h1>{{ title }}</h1>
+		{% if siteUrl %}
+			{% newCount collections.items, title, title | slug %}
+			<h1 id="{{ title | slug }}"><a href="{{ siteUrl }}">{{ title }}</a></h1>
+		{% else %}
+			<h1>{{ title }}</h1>
+		{% endif %}
 	</header>
 	<main>
 	{{ content | safe }}

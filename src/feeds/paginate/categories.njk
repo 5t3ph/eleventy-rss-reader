@@ -11,17 +11,6 @@ eleventyComputed:
 
 <ul>
   {% for feed in categories.items %}
-      <li>
-        <h3><a href="/{{ feed.feedTitle | slug }}/">{{ feed.feedTitle }}</a></h3>
-        <ul>
-        {% for item in feed.items %}
-          <li>
-            {% if item.new %}New{% endif %}
-            <strong>{{ item.date | postDate }}</strong>
-            <a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a>
-          </li>
-        {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
+      {% include "sourceCard.njk" %}
+  {% endfor %}
 </ul>

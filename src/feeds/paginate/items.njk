@@ -4,6 +4,7 @@
     data: "feeds",
     size: 1,
     alias: "item",
+    addAllPagesToCollections: true,
     before: function(data) {
       const feedItems = [];
 
@@ -19,9 +20,12 @@
     }
   },
   layout: "base.njk",
+  tags: "items",
   permalink: "/{{ item.feedTitle | slug }}/{{ item.title | slug }}/",
   eleventyComputed: {
-    title: "{{ item.title }}"
+    title: "{{ item.title }}",
+    new: "{{ item.new }}",
+    source: "{{ item.feedTitle }}"
   }
 }
 ---

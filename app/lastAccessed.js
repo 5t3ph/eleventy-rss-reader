@@ -8,7 +8,7 @@ const d = new Date();
 // For local dev, set date back X days
 if (env === 'dev') {
   // Range of your choosing
-  d.setDate(d.getDate() - 30);
+  d.setDate(d.getDate() - 60);
 }
 
 const time = new Date(d).getTime();
