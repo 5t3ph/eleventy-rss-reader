@@ -1,0 +1,35 @@
+.card {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid;
+
+  header {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  header,
+  ul {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  ul {
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+
+    li {
+      display: grid;
+    }
+  }
+
+  footer {
+    align-self: end;
+    border-top: 1px solid;
+    padding: 0.25em;
+    text-align: center;
+  }
+}

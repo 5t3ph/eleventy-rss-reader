@@ -11,7 +11,7 @@
     "css": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "lastaccess": "node app/lastAccessed.js",
     "prestart": "cross-env ELEVENTY_ENV=dev npm run lastaccess",
-    "postbuild": "cross-env ELEVENTY_ENV=dev npm-run-all --parallel css lastaccess",
+    "postbuild": "cross-env ELEVENTY_ENV=prod npm-run-all --parallel css lastaccess",
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:sass build:eleventy"
   },

@@ -4,10 +4,7 @@ const fetch = require('node-fetch');
 const fastglob = require("fast-glob");
 const fs = require("fs");
 const lastAccessed = require("./lastAccessed.js");
-
-const d = new Date();
-d.setDate(d.getDate() - 90);
-const dateLimit = new Date(d).getTime();
+const dateLimit = require("./dateLimit.js");
 
 const getSources = async () => {
   // Create a "glob" of all feed json files

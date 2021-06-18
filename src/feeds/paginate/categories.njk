@@ -9,7 +9,7 @@ eleventyComputed:
   title: "{{ categories.category }}"
 ---
 
-<ul>
+<ul class="grid">
   {% for feed in categories.items %}
       {% include "sourceCard.njk" %}
   {% endfor %}

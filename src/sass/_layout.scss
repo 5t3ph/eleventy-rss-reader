@@ -1,0 +1,40 @@
+.inclusively-hidden {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body > header {
+  min-height: 30vh;
+  display: grid;
+  place-content: center;
+}
+
+main {
+  width: min(120ch, 100vw - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  --min: 30ch;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+main > h2:not(:first-of-type) {
+  margin-top: 8vh;
+}

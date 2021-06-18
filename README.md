@@ -2,9 +2,7 @@
 
 # Build in Progress: Eleventy RSS Reader
 
-We're building this project LIVE over on Twitch. Visit the [announcement post](https://dev.to/5t3ph/let-s-build-a-jamstack-app-together-5hkp) to learn more.
-
-[Follow 5t3phDev on Twitch](https://twitch.tv/5t3phDev) for go-live notifications.
+> We built most of this project LIVE over on Twitch. Visit the [announcement post](https://dev.to/5t3ph/let-s-build-a-jamstack-app-together-5hkp) to learn more.
 
 [Subscribe to my newsletter](https://moderncss.dev) to receive my weekly streaming schedule (and other news about my various projects + CSS tips).
 
@@ -14,10 +12,13 @@ We're building this project LIVE over on Twitch. Visit the [announcement post](h
 
 > Final edited recordings will eventually be published to the [11ty Rocks YouTube Channel](https://www.youtube.com/channel/UCTuSQg_Ol4shhSYQ1EfpHiQ?sub_confirmation=1)
 
-- [Project intro and creating the feature list](https://www.twitch.tv/videos/1042505212)
-- [Begin the 11ty architecture + add feedparser](https://www.twitch.tv/videos/1044461360)
+- [Project intro and creating the feature list](https://youtu.be/ADx7RbtIWwg)
+- [Begin the 11ty architecture + add feedparser](https://www.twitch.tv/videos/1044461360?collection=G7YXMEt6hhYCyw)
 - [Reorganize, adjust feed output, and create dynamic views](https://www.twitch.tv/videos/1050950198?collection=G7YXMEt6hhYCyw)
 - [Enable method to determine "new", link views](https://www.twitch.tv/videos/1052892091?collection=G7YXMEt6hhYCyw)
+- [Filters and templating](https://www.twitch.tv/videos/1056940384?collection=G7YXMEt6hhYCyw)
+- Part one of [CSS styling](https://www.twitch.tv/videos/1058997704?collection=G7YXMEt6hhYCyw)
+- Part two of [CSS styling](https://www.twitch.tv/videos/1059018865?collection=G7YXMEt6hhYCyw)
 
 ## Development Scripts
 

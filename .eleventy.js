@@ -36,6 +36,10 @@ module.exports = function (eleventyConfig) {
     return domain.hostname.replace("www.", "");
   });
 
+  eleventyConfig.addFilter("dateLimitDisplay", (dateObj) => {
+    return DateTime.fromMillis(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+
   return {
     dir: {
       input: "src",

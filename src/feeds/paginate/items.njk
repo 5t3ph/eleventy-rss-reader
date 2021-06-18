@@ -25,7 +25,10 @@
   eleventyComputed: {
     title: "{{ item.title }}",
     new: "{{ item.new }}",
-    source: "{{ item.feedTitle }}"
+    source: "{{ item.feedTitle }}",
+    itemDate: "{{ item.date }}",
+    link: "{{ item.link }}",
+    siteUrl: "{{ item.siteUrl }}"
   }
 }
 ---

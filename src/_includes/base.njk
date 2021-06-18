@@ -8,9 +8,16 @@
 </head>
 <body>
 	<header>
-		{% if siteUrl %}
+		{% if siteUrl and not link %}
 			{% newCount collections.items, title, title | slug %}
 			<h1 id="{{ title | slug }}"><a href="{{ siteUrl }}">{{ title }}</a></h1>
+		{% elseif link %}
+			{% include "postDate.njk" %}
+			<h1>{{ title }}</h1>
+			<a href="{{ link }}">View <span class="inclusively-hidden">{{ title }}</span> on {{ item.siteUrl | domain }}</a>
+		{% elseif not page.fileSlug %}
+			<h1>{{ meta.siteTitle }}</h1>
+			<small><em>Fetching results since {{ dateLimit | dateLimitDisplay }}</em></small>
 		{% else %}
 			<h1>{{ title }}</h1>
 		{% endif %}
