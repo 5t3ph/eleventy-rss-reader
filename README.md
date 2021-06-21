@@ -1,3 +1,5 @@
+![Preview of the Eleventy RSS Reader starter](https://repository-images.githubusercontent.com/373531262/91192f80-d222-11eb-8bcb-325ff3d0a3e7)
+
 # Eleventy RSS Reader Starter
 
 > We built most of this project LIVE over on Twitch. Visit the [announcement post](https://dev.to/5t3ph/let-s-build-a-jamstack-app-together-5hkp) to learn more.
@@ -23,6 +25,10 @@ This repo is now ready as an Eleventy starter! Review the recordings and customi
 > Note that additional styling and further organization was completed outside of the streams to get the starter fully release-ready. Check the commit history if you're interested in the difference between streamed dev and post-stream dev.
 
 ## Customization
+
+### Site Title
+
+Edit `src/_data/meta.js` to update the `siteTitle` value.
 
 ### Colors
 
