@@ -1,3 +1,9 @@
+{%- set itemCategory %}
+{% if category %}
+<span class="category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true" width="24"><defs/><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg> <a href="/category/{{ category | slug }}/">{{ category }}</a></span>
+{% endif %}
+{% endset -%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +13,45 @@
 	<link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
 </head>
 <body>
-	<header>
-		{% if siteUrl and not link %}
-			{% newCount collections.items, title, title | slug %}
-			<h1 id="{{ title | slug }}"><a href="{{ siteUrl }}">{{ title }}</a></h1>
-		{% elseif link %}
-			{% include "postDate.njk" %}
-			<h1>{{ title }}</h1>
-			<a href="{{ link }}">View <span class="inclusively-hidden">{{ title }}</span> on {{ item.siteUrl | domain }}</a>
-		{% elseif not page.fileSlug %}
-			<h1>{{ meta.siteTitle }}</h1>
+	{% if page.fileSlug %}
+		<nav class="background-primary">
+			<a href="/">{{ meta.siteTitle }}</a>
 			<small><em>Fetching results since {{ dateLimit | dateLimitDisplay }}</em></small>
-		{% else %}
-			<h1>{{ title }}</h1>
-		{% endif %}
+		</nav>
+	{% endif %}
+
+	<header {% if not page.fileSlug %}class="background-primary"{% endif %}>
+			{% if siteUrl and not link %}
+		<div class="container container--source">
+				{% newCount collections.items, title, title | slug %}
+				<div>
+					<h1 id="{{ title | slug }}">{{ title }}</h1>
+					<p class="header-meta">{{ itemCategory | safe }} <a href="{{ siteUrl }}">Visit full site</a></p>
+				</div>
+			{% elseif link %}
+		<div class="container container--item">
+				{% include "postDate.njk" %}
+				<h1>{{ title }}</h1>
+				<p class="header-meta">{{ itemCategory | safe }} <a href="/{{ item.feedTitle | slug }}/">All from {{ item.feedTitle }}</a> <strong><a href="{{ link }}">View <span class="inclusively-hidden">{{ title }}</span> on {{ item.siteUrl | domain }}</a></strong></p>
+			{% elseif not page.fileSlug %}
+		<div class="container container--home">
+				<h1>{{ meta.siteTitle }}</h1>
+				<small><em>Fetching results since {{ dateLimit | dateLimitDisplay }}</em></small>
+			{% else %}
+		<div class="container">
+				<h1>{{ title }}</h1>
+			{% endif %}
+		</div>
 	</header>
 	<main>
 	{{ content | safe }}
 	</main>
+	<footer class="background-primary">
+		<p><a href="https://github.com/5t3ph/eleventy-rss-reader">eleventy-rss-reader</a> created by <a href="https://twitter.com/5t3ph">Stephanie Eckles</a></p>
+	</footer>
+
+	{% if link %}
+	<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+	{% endif %}
 </body>
 </html>

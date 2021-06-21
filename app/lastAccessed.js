@@ -6,9 +6,9 @@ const env = process.env.ELEVENTY_ENV;
 const d = new Date();
 
 // For local dev, set date back X days
-if (env === 'dev') {
+if (env === "dev") {
   // Range of your choosing
-  d.setDate(d.getDate() - 60);
+  d.setDate(d.getDate() - 7);
 }
 
 const time = new Date(d).getTime();

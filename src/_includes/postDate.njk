@@ -1,1 +1,1 @@
-<small><span>{% if item.new %}New{% endif %}</span> <strong>{{ item.date | postDate }}</strong></small>
+<small>{% if item.new %}<span class="new-badge background-secondary">New</span> {% endif %}<strong>{{ item.date | postDate }}</strong></small>

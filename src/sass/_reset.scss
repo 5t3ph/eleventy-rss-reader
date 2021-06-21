@@ -20,8 +20,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -44,9 +44,17 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+svg {
   max-width: 100%;
   display: block;
+}
+
+svg {
+  display: inline-block;
+  fill: currentColor;
+  width: 1em;
+  vertical-align: middle;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -62,7 +70,7 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {

@@ -20,20 +20,20 @@
   permalink: "/{{ sources.feedTitle | slug }}/",
   eleventyComputed: {
     title: "{{ sources.feedTitle }}",
-    siteUrl: "{{ sources.siteUrl }}"
+    siteUrl: "{{ sources.siteUrl }}",
+    category: "{{ sources.category }}"
   }
 }
 ---
-<ul>
+<ul class="grid">
   {% for item in sources.items %}
-    <li>
+    <li class="card card-excerpt background-light">
       {% include "postDate.njk" %}
       <h2><a href="/{{ item.feedTitle | slug }}/{{ item.title | slug }}/">{{ item.title }}</a></h2>
-      <p>{{ item.excerpt }}</p>
-      <footer>
+      <p>{{ item.excerpt | safe }}</p>
+      <footer class="background-primary">
         <a href="{{ item.link }}">View <span class="inclusively-hidden">{{ item.title }}</span> on {{ item.siteUrl | domain }}</a>
       </footer>
-
     </li>
   {% endfor %}
 </ul>

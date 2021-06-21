@@ -1,8 +1,8 @@
-![Let's Build a Jamstack App Together! RSS Reader using Eleventy and modern CSS](https://repository-images.githubusercontent.com/373531262/98d88600-c465-11eb-887f-ae7ae70014b8)
-
-# Build in Progress: Eleventy RSS Reader
+# Eleventy RSS Reader Starter
 
 > We built most of this project LIVE over on Twitch. Visit the [announcement post](https://dev.to/5t3ph/let-s-build-a-jamstack-app-together-5hkp) to learn more.
+
+This repo is now ready as an Eleventy starter! Review the recordings and customization section below to learn more about how it was built and how it works.
 
 [Subscribe to my newsletter](https://moderncss.dev) to receive my weekly streaming schedule (and other news about my various projects + CSS tips).
 
@@ -19,6 +19,25 @@
 - [Filters and templating](https://www.twitch.tv/videos/1056940384?collection=G7YXMEt6hhYCyw)
 - Part one of [CSS styling](https://www.twitch.tv/videos/1058997704?collection=G7YXMEt6hhYCyw)
 - Part two of [CSS styling](https://www.twitch.tv/videos/1059018865?collection=G7YXMEt6hhYCyw)
+
+> Note that additional styling and further organization was completed outside of the streams to get the starter fully release-ready. Check the commit history if you're interested in the difference between streamed dev and post-stream dev.
+
+## Customization
+
+### Colors
+
+Update the CSS custom properties values within `src/sass/_theme.scss` to quickly retheme the app.
+
+### RSS Sources
+
+Modify, add, or remove the JSON files within `src/feeds/` following the schema of:
+
+```json
+{
+  "category": "Category Name",
+  "items": ["https://permalink.to/feed"]
+}
+```
 
 ## Development Scripts
 

@@ -1,0 +1,32 @@
+:root {
+  --color-primary-hs: 260, 100%;
+  --color-secondary-hs: 310deg, 60%;
+  --color-primary: hsl(var(--color-primary-hs), 65%);
+  --color-on-primary: hsl(var(--color-primary-hs), 99%);
+  --color-secondary: hsl(var(--color-secondary-hs), 48%);
+  --color-secondary-light: hsl(var(--color-secondary-hs), 95%);
+  --color-on-secondary: hsl(var(--color-secondary-hs), 99%);
+  --color-light: hsl(var(--color-primary-hs), 99%);
+  --background: hsl(var(--color-primary-hs), 95%);
+  --text: hsl(var(--color-primary-hs), 25%);
+}
+
+$background-colors: "primary", "secondary", "light";
+
+@each $color in $background-colors {
+  .background-#{$color} {
+    background-color: var(--color-#{$color});
+
+    @if $color != "light" {
+      color: var(--color-on-#{$color});
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.color-primary {
+  color: var(--color-primary);
+}

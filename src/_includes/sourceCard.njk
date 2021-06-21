@@ -1,4 +1,4 @@
-<li class="card">
+<li class="card background-light">
   {% set feedSlug %}{{ feed.feedTitle | slug }}{% endset %}
 
   <header>
@@ -13,7 +13,7 @@
     </li>
   {% endfor %}
   </ul>
-  <footer>
+  <footer class="background-primary">
     <small><a href="/{{ feed.feedTitle | slug }}/">View all from {{ feed.siteUrl | domain }}</a></small>
   </footer>
 </li>

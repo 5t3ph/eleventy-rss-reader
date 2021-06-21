@@ -1,8 +1,7 @@
 @use "reset";
+@use "theme";
 @use "layout";
+@use "item-articles";
 @use "card";
-
-body {
-  font-family: sans-serif;
-  background-color: #f9f9f9;
-}
+@use "utilities";
+@use "prismtheme";

@@ -1,19 +1,46 @@
 .card {
-  display: grid;
-  gap: 1rem;
-  align-items: start;
-  border: 1px solid;
+  --card-padding: 1.5rem;
 
-  header {
-    display: flex;
-    align-items: center;
-    padding-top: 1rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-rows: auto 1fr auto;
+  align-items: start;
+  padding-top: var(--card-padding);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 0.5rem -0.05rem hsla(var(--color-primary-hs), 15%, 0.3);
+
+  &-excerpt {
+    gap: 0.5rem;
+    grid-auto-rows: auto auto 1fr auto;
+
+    footer {
+      margin-top: 1rem;
+    }
   }
 
-  header,
-  ul {
-    padding-right: 1rem;
-    padding-left: 1rem;
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+
+    h3 {
+      margin-top: 0.5ex;
+    }
+  }
+
+  h2 {
+    font-size: 1.35rem;
+  }
+
+  > *:not(footer) {
+    padding-right: var(--card-padding);
+    padding-left: var(--card-padding);
+
+    a {
+      text-decoration: none;
+      font-size: 1.35rem;
+    }
   }
 
   ul {
@@ -23,13 +50,13 @@
 
     li {
       display: grid;
+      gap: 0.25rem;
     }
   }
 
   footer {
     align-self: end;
-    border-top: 1px solid;
-    padding: 0.25em;
+    padding: 0.25em var(--card-padding);
     text-align: center;
   }
 }

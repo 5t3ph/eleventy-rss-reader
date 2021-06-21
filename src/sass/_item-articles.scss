@@ -1,0 +1,80 @@
+.item-article {
+  > * + * {
+    margin-top: 1.5em;
+
+    :is(h1, h2, h3) {
+      margin-top: 3em;
+    }
+  }
+
+  button {
+    border: 2px solid;
+    background: transparent;
+    border-radius: 4px;
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  blockquote,
+  figure,
+  figcaption {
+    display: grid;
+    grid-gap: 1rem;
+  }
+
+  blockquote {
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    border-left: 2px solid var(--color-secondary);
+    background-color: var(--color-secondary-light);
+  }
+
+  figure {
+    justify-content: center;
+  }
+
+  figcaption {
+    font-size: 0.9rem;
+  }
+
+  ::marker {
+    color: var(--color-secondary);
+  }
+
+  mark {
+    background-color: var(--color-secondary-light);
+  }
+
+  #carbonads {
+    display: none;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--color-secondary);
+    margin: 8vh;
+  }
+
+  img[src^="/"],
+  img[src^="."] {
+    padding: 1rem;
+    font-size: 0.9rem;
+    max-width: 80%;
+    border: 2px solid var(--color-secondary);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 0.5rem var(--color-secondary-light);
+  }
+
+  iframe[src*="vimeo"],
+  iframe[src*="youtube"] {
+    aspect-ratio: 16/9;
+    max-width: 100%;
+  }
+
+  *[style*="padding"],
+  *[style*="margin"] {
+    padding: unset !important;
+    margin: unset !important;
+  }
+}

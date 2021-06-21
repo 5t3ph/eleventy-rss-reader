@@ -1,0 +1,28 @@
+.inclusively-hidden {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+.new-count {
+  width: 3ch;
+  height: 3ch;
+  line-height: 3ch;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.new-badge {
+  font-size: 0.8em;
+  padding: 0.15em 0.25em;
+  border-radius: 0.25rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}

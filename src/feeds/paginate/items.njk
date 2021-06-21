@@ -22,16 +22,21 @@
   layout: "base.njk",
   tags: "items",
   permalink: "/{{ item.feedTitle | slug }}/{{ item.title | slug }}/",
+  templateEngineOverride: "md, njk",
   eleventyComputed: {
     title: "{{ item.title }}",
     new: "{{ item.new }}",
     source: "{{ item.feedTitle }}",
-    itemDate: "{{ item.date }}",
     link: "{{ item.link }}",
+    category: "{{ item.category }}",
     siteUrl: "{{ item.siteUrl }}"
   }
 }
 ---
-<strong>{{ item.date | postDate }}</strong>
-
-{{ item.content | safe }}
+<article class="container item-article background-light">
+{% if item.content %}
+{{ item.content | stripUnsafe | safe }}
+{% else %}
+<p><em>No content found</em> - <strong><a href="{{ link }}">view <span class="inclusively-hidden">{{ title }}</span> on {{ item.siteUrl | domain }}</a></strong></p>
+{% endif %}
+</article>

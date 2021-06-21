@@ -1,27 +1,119 @@
-.inclusively-hidden {
-  clip: rect(0 0 0 0); 
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap; 
-  width: 1px;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: system-ui, sans-serif;
+  font-size: 1.05rem;
+  background-color: var(--background);
+  color: var(--text);
 }
 
-body {
-  min-height: 100vh;
+a {
+  color: var(--color-primary);
+
+  &:focus {
+    outline-offset: max(2px, 0.15em);
+    outline: max(2px, 0.15em) dashed currentColor;
+    scroll-margin-bottom: max(8vh, 2rem);
+  }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-size: clamp(1.25rem, 4vw + 1rem, 3rem);
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+
+  a {
+    text-decoration-style: wavy;
+    text-underline-offset: 0.2em;
+  }
+}
+
+:is(h1, h2) {
+  line-height: 1.3;
+}
+
+nav,
+body > footer {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  text-align: center;
+  padding: 0.5rem 1rem;
+
+  > * {
+    width: fit-content;
+  }
 }
 
 body > header {
   min-height: 30vh;
   display: grid;
   place-content: center;
+  text-align: center;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 main {
-  width: min(120ch, 100vw - 2rem);
+  width: min(120ch, 100vw - 3rem);
+  margin: 8vh auto;
+
+  > * + * {
+    margin-top: 1em;
+
+    &:is(h2, h3) {
+      margin-top: 2em;
+    }
+  }
+}
+
+main > h2:not(:first-of-type) {
+  margin-top: 8vh;
+}
+
+body > footer {
+  margin-top: auto;
+}
+
+article {
+  padding: clamp(1rem, 5%, 3rem);
+  border-radius: 0.25rem;
+}
+
+.container {
   margin-left: auto;
   margin-right: auto;
+  width: min(80ch, 100vw - 3rem);
+
+  &--source {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 2rem;
+  }
+}
+
+.header-meta {
+  display: inline-flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  text-align: center;
+  justify-content: center;
+
+  .category {
+    display: inline-flex;
+    gap: 0.25em;
+  }
 }
 
 .grid {
@@ -29,12 +121,8 @@ main {
 
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 2rem 0 0;
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-}
-
-main > h2:not(:first-of-type) {
-  margin-top: 8vh;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--min)), 1fr));
 }

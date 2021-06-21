@@ -1,7 +1,10 @@
 const { DateTime } = require("luxon");
 const slugify = require("slugify");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   eleventyConfig.addWatchTarget("./src/sass/");
 
   eleventyConfig.addFilter("slug", (str) => {
@@ -22,7 +25,7 @@ module.exports = function (eleventyConfig) {
     });
 
     return newItems.length > 0
-      ? `<span aria-describedby="${slug}">${newItems.length}<span class="inclusively-hidden"> new items</span></span>`
+      ? `<span class="new-count background-primary" aria-describedby="${slug}">${newItems.length}<span class="inclusively-hidden"> new items</span></span>`
       : "";
   });
 
@@ -38,6 +41,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("dateLimitDisplay", (dateObj) => {
     return DateTime.fromMillis(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+
+  eleventyConfig.addFilter("stripUnsafe", (content) => {
+    const regex = /<script(.+?)<\/script>/gim;
+    return content != undefined ? content.replace(regex, "&nbsp;") : content;
   });
 
   return {

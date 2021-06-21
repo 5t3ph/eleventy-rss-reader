@@ -1,4 +1,8 @@
 {
   "category": "Podcasts",
-  "items": ["https://wordwrap.dev/feed/"]
+  "items": [
+    "https://wordwrap.dev/feed/",
+    "https://anchor.fm/s/3a915d90/podcast/rss",
+    "https://www.omnycontent.com/d/playlist/aaea4e69-af51-495e-afc9-a9760146922b/75a86d39-9e0e-4e9a-b948-aae301805fe6/514362cf-31b4-4ed2-af40-aae301805ffd/podcast.rss"
+  ]
 }
