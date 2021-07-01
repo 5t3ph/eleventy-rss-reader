@@ -14,10 +14,12 @@ This repo is now ready as an Eleventy starter! Review the recordings and customi
 
 > Final edited recordings will eventually be published to the [11ty Rocks YouTube Channel](https://www.youtube.com/channel/UCTuSQg_Ol4shhSYQ1EfpHiQ?sub_confirmation=1)
 
-- [Project intro and creating the feature list](https://youtu.be/ADx7RbtIWwg)
-- [Begin the 11ty architecture + add feedparser](https://www.twitch.tv/videos/1044461360?collection=G7YXMEt6hhYCyw)
-- [Reorganize, adjust feed output, and create dynamic views](https://www.twitch.tv/videos/1050950198?collection=G7YXMEt6hhYCyw)
-- [Enable method to determine "new", link views](https://www.twitch.tv/videos/1052892091?collection=G7YXMEt6hhYCyw)
+📺 = moved to YouTube
+
+- 📺 [Project intro and creating the feature list](https://youtu.be/ADx7RbtIWwg)
+- 📺 [Begin the 11ty architecture + add feedparser](https://youtu.be/Dju1X7YNYzk)
+- 📺 [Reorganize, adjust feed output, and create dynamic views](https://youtu.be/tMgoOsecjLw)
+- 📺 [Enable method to determine "new", link views](https://youtu.be/tLL4offqbTo)
 - [Filters and templating](https://www.twitch.tv/videos/1056940384?collection=G7YXMEt6hhYCyw)
 - Part one of [CSS styling](https://www.twitch.tv/videos/1058997704?collection=G7YXMEt6hhYCyw)
 - Part two of [CSS styling](https://www.twitch.tv/videos/1059018865?collection=G7YXMEt6hhYCyw)
