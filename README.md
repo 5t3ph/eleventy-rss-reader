@@ -20,7 +20,7 @@ This repo is now ready as an Eleventy starter! Review the recordings and customi
 - 📺 [Begin the 11ty architecture + add feedparser](https://youtu.be/Dju1X7YNYzk)
 - 📺 [Reorganize, adjust feed output, and create dynamic views](https://youtu.be/tMgoOsecjLw)
 - 📺 [Enable method to determine "new", link views](https://youtu.be/tLL4offqbTo)
-- [Filters and templating](https://www.twitch.tv/videos/1056940384?collection=G7YXMEt6hhYCyw)
+- 📺 [Filters and templating](https://youtu.be/C4fye6K1IiQ)
 - Part one of [CSS styling](https://www.twitch.tv/videos/1058997704?collection=G7YXMEt6hhYCyw)
 - Part two of [CSS styling](https://www.twitch.tv/videos/1059018865?collection=G7YXMEt6hhYCyw)
 
