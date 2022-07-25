@@ -1,6 +1,7 @@
 // @link https://www.npmjs.com/package/feedparser
 const FeedParser = require("feedparser");
-const fetch = require("node-fetch");
+const { Readable } = require('stream');
+const EleventyFetch = require("@11ty/eleventy-fetch");
 const fastglob = require("fast-glob");
 const fs = require("fs");
 const lastAccessed = require("./lastAccessed.js");
@@ -34,24 +35,26 @@ const createExcerpt = (content) => {
 
 const parseFeed = async (feed, category) => {
   return await new Promise((resolve) => {
-    const req = fetch(feed);
+    // retrieve data (if not in the cache)
+    const req = EleventyFetch(feed, {
+      duration: "1d", // cache data for 1 day
+      type: "buffer",
+      verbose: true   // check output for caching message after expiration
+    });
 
     const feedparser = new FeedParser();
     let feedItems = [];
 
     req.then(
       function (res) {
-        if (res.status !== 200) {
-          throw new Error("Bad status code");
-        } else {
-          // The response `body` -- res.body -- is a stream
-          res.body.pipe(feedparser);
-        }
-      },
-      function (_err) {
-        // handle any request errors
+        // convert buffer to readable stream for compatibility with
+        // feedparser package
+        Readable.from(res).pipe(feedparser);
       }
-    );
+    ).catch(e => {
+      console.log(e);
+      throw new Error(`Could not retrieve ${feed}`);
+    });
 
     feedparser.on("error", function (_error) {
       // always handle errors

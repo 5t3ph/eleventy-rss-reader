@@ -12,3 +12,5 @@ public
 # macOS related files
 .DS_Store
 
+# 11ty cache directory
+.cache
