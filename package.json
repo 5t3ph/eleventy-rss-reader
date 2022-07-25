@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-fetch": "^3.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "autoprefixer": "^10.2.6",
     "cross-env": "^7.0.3",
